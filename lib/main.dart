@@ -329,6 +329,7 @@ class _IUsefulBooksIFrameState extends State<IUsefulBooksIFrame> {
           isHtml: true,
           onLoaded: () {},
           convertToWidgets: true,
+          // isMarkdown: true,
           width: 1280,
           height: 720,
         ),

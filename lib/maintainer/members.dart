@@ -13,22 +13,22 @@ class Maintainers {
 final List<Maintainers> maintainers = [
   Maintainers(
     name: 'Liuちゃん',
-    imageURL: 'img/1507582124.jpg',
+    imageURL: 'assets/img/1507582124.jpg',
     moto: '| Kizuna AI 单推人 |',
   ),
   Maintainers(
     name: 'heartalborada',
-    imageURL: 'img/2680805702.jpg',
+    imageURL: 'assets/img/2680805702.jpg',
     moto: '| 一个初一在读学生 |',
   ),
   Maintainers(
     name: 'LookStars',
-    imageURL: 'img/1851865295.jpg',
+    imageURL: 'assets/img/1851865295.jpg',
     moto: '| Looking Forward To Stars |',
   ),
   Maintainers(
     name: 'EndCredits',
-    imageURL: 'img/2954582482.jpg',
+    imageURL: 'assets/img/2954582482.jpg',
     moto: '| Positive Outlook! |',
   ),
 ];
