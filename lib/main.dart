@@ -20,13 +20,12 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: DefaultTabController(
-        length: 5,
+        length: 6,
         child: Scaffold(
             appBar: AppBar(
               title: Container(
                   child: Row(children: [
                 Text('SD Minecraft Server'),
-                INeteasePlayer(),
               ])),
               elevation: 3.0,
               bottom: TabBar(
@@ -57,6 +56,7 @@ class _HomePageState extends State<HomePage> {
                       height: 30,
                     ),
                   ),
+                  INeteasePlayer(),
                 ],
               ),
             ),
@@ -80,6 +80,7 @@ class _HomePageState extends State<HomePage> {
                     child: Text('工具书'),
                   ),
                 ),
+                Scaffold()
               ],
             ),
             drawer: Drawer(
@@ -107,7 +108,7 @@ class _HomePageState extends State<HomePage> {
                         'This Flutter is super powerful.',
                         textAlign: TextAlign.left,
                       ),
-                      Text('Made with ♥ by EndCredits.'),
+                      Text('Made with heart by EndCredits.'),
                     ]),
                   )
                 ],
@@ -127,12 +128,7 @@ class ITopBarMain extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-        decoration: BoxDecoration(
-          image:
-              DecorationImage(image: NetworkImage(backgroundImage[0].imageURL)),
-        ),
-        child: Scaffold(body: IMainBody1()));
+    return Container(child: Scaffold(body: IMainBody1()));
   }
 }
 
@@ -151,45 +147,53 @@ class ITopBarAdministrator extends StatelessWidget {
 
   Widget _listItemBuilder(BuildContext context, int index) {
     return Container(
-      margin: EdgeInsets.only(left: 350.0, right: 350.0, top: 10, bottom: 10),
-      padding: EdgeInsets.all(10),
-      decoration: BoxDecoration(
-          gradient: LinearGradient(colors: [
-            Colors.green,
-            Colors.white,
-          ]),
-          color: Colors.white,
-          boxShadow: [
-            BoxShadow(
-                offset: Offset(4.0, 6.0), color: Colors.black54, blurRadius: 10)
-          ],
-          borderRadius: BorderRadius.circular(16.0),
-          border: Border.all(
-              color: Colors.green, width: 3.0, style: BorderStyle.solid)),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: <Widget>[
-          Container(
-              child: Image.asset(
-            maintainers[index].imageURL,
-            scale: 2.5,
-          )),
-          Center(
-            child: Column(children: [
-              Text(
-                maintainers[index].name,
-                style: TextStyle(fontSize: 24),
-              ),
-              Text(
-                maintainers[index].moto,
-                style: TextStyle(fontSize: 16),
-              )
+        margin: EdgeInsets.only(left: 50.0, right: 50.0, top: 20, bottom: 10),
+        padding: EdgeInsets.all(25),
+        decoration: BoxDecoration(
+            gradient: LinearGradient(colors: [
+              Colors.green,
+              Colors.white,
             ]),
-          )
-        ],
-      ),
-    );
+            color: Colors.white,
+            boxShadow: [
+              BoxShadow(
+                  offset: Offset(4.0, 6.0),
+                  color: Colors.black54,
+                  blurRadius: 10)
+            ],
+            borderRadius: BorderRadius.circular(16.0),
+            border: Border.all(
+                color: Colors.green, width: 3.0, style: BorderStyle.solid)),
+        child: Container(
+            width: 200,
+            height: 320,
+            child: FittedBox(
+              fit: BoxFit.contain,
+              alignment: Alignment.center,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: <Widget>[
+                  Container(
+                      child: Image.asset(
+                    maintainers[index].imageURL,
+                    scale: 2.5,
+                  )),
+                  Center(
+                    child: Column(children: [
+                      Text(
+                        maintainers[index].name,
+                        style: TextStyle(fontSize: 24),
+                      ),
+                      Text(
+                        maintainers[index].moto,
+                        style: TextStyle(fontSize: 16),
+                      )
+                    ]),
+                  )
+                ],
+              ),
+            )));
   }
 }
 
@@ -202,7 +206,7 @@ class IMainBody1 extends StatelessWidget {
         decoration: BoxDecoration(
           image: DecorationImage(
             fit: BoxFit.cover,
-            image: AssetImage(backgroundImage[0].imageURL),
+            image: NetworkImage(backgroundImage[0].imageURL),
           ),
         ),
         child: Center(
