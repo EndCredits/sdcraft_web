@@ -279,8 +279,6 @@ void _openExtern() async {
   const gitBookUrl = 'https://book.sdcraft.fun/';
   if (true) {
     await launch(gitBookUrl);
-  } else {
-    throw 'Could not launch $gitBookUrl';
   }
 }
 
@@ -303,9 +301,7 @@ class _INeteasePlayerState extends State<INeteasePlayer> {
         isHtml: false,
         width: 300,
         height: 60,
-        onLoaded: () {
-          ;
-        },
+        onLoaded: () {},
       ),
     );
   }
