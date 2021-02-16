@@ -74,12 +74,7 @@ class _HomePageState extends State<HomePage> {
                 Scaffold(
                   body: IJoinUs(),
                 ),
-                Scaffold(
-                  body: ElevatedButton(
-                    onPressed: () => _openExtern(),
-                    child: Text('工具书'),
-                  ),
-                ),
+                Scaffold(body: IUsefulBooksIFrame()),
                 Scaffold()
               ],
             ),
@@ -306,6 +301,34 @@ class _INeteasePlayerState extends State<INeteasePlayer> {
         width: 300,
         height: 60,
         onLoaded: () {},
+      ),
+    );
+  }
+}
+
+const String usefulBooksIframe = 'https://book.sdcraft.fun';
+
+class IUsefulBooksIFrame extends StatefulWidget {
+  IUsefulBooksIFrame({Key key}) : super(key: key);
+
+  @override
+  _IUsefulBooksIFrameState createState() => _IUsefulBooksIFrameState();
+}
+
+class _IUsefulBooksIFrameState extends State<IUsefulBooksIFrame> {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      child: FittedBox(
+        fit: BoxFit.contain,
+        child: EasyWebView(
+          src: usefulBooksIframe,
+          isHtml: true,
+          onLoaded: () {},
+          convertToWidgets: true,
+          width: 1280,
+          height: 720,
+        ),
       ),
     );
   }
