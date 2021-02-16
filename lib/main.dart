@@ -23,7 +23,11 @@ class _HomePageState extends State<HomePage> {
         length: 5,
         child: Scaffold(
             appBar: AppBar(
-              title: Text('SD Minecraft Server'),
+              title: Container(
+                  child: Row(children: [
+                Text('SD Minecraft Server'),
+                INeteasePlayer(),
+              ])),
               elevation: 3.0,
               bottom: TabBar(
                 unselectedLabelColor: Colors.black12,
@@ -104,7 +108,6 @@ class _HomePageState extends State<HomePage> {
                         textAlign: TextAlign.left,
                       ),
                       Text('Made with ♥ by EndCredits.'),
-                      INeteasePlayer(),
                     ]),
                   )
                 ],
@@ -282,7 +285,7 @@ void _openExtern() async {
 }
 
 const String neteaseCloudMuiscPlayer =
-    'https://music.163.com/outchain/player?type=2&id=492228208&auto=1&height=66';
+    'https://music.163.com/outchain/player?type=2&id=492228208&auto=1&height=32';
 
 class INeteasePlayer extends StatefulWidget {
   INeteasePlayer({Key key}) : super(key: key);
@@ -299,7 +302,7 @@ class _INeteasePlayerState extends State<INeteasePlayer> {
         src: neteaseCloudMuiscPlayer,
         isHtml: false,
         width: 300,
-        height: 80,
+        height: 60,
         onLoaded: () {
           ;
         },
