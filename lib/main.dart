@@ -4,6 +4,7 @@ import 'package:flutter/rendering.dart';
 import 'maintainer/members.dart';
 import 'background/background.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:easy_web_view/easy_web_view.dart';
 
 void main() => runApp(HomePage());
 
@@ -103,6 +104,7 @@ class _HomePageState extends State<HomePage> {
                         textAlign: TextAlign.left,
                       ),
                       Text('Made with ♥ by EndCredits.'),
+                      INeteasePlayer(),
                     ]),
                   )
                 ],
@@ -276,5 +278,32 @@ void _openExtern() async {
     await launch(gitBookUrl);
   } else {
     throw 'Could not launch $gitBookUrl';
+  }
+}
+
+const String neteaseCloudMuiscPlayer =
+    'https://music.163.com/outchain/player?type=2&id=492228208&auto=1&height=66';
+
+class INeteasePlayer extends StatefulWidget {
+  INeteasePlayer({Key key}) : super(key: key);
+
+  @override
+  _INeteasePlayerState createState() => _INeteasePlayerState();
+}
+
+class _INeteasePlayerState extends State<INeteasePlayer> {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      child: EasyWebView(
+        src: neteaseCloudMuiscPlayer,
+        isHtml: false,
+        width: 300,
+        height: 80,
+        onLoaded: () {
+          ;
+        },
+      ),
+    );
   }
 }
