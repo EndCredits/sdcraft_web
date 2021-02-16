@@ -202,7 +202,7 @@ class IMainBody1 extends StatelessWidget {
         decoration: BoxDecoration(
           image: DecorationImage(
             fit: BoxFit.cover,
-            image: NetworkImage(backgroundImage[0].imageURL),
+            image: AssetImage(backgroundImage[0].imageURL),
           ),
         ),
         child: Center(
