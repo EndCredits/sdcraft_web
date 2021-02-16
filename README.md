@@ -41,11 +41,13 @@ flutter doctor
 And then,Just ENJOY IT
 
 ```
+flutter pub get
 flutter build web
 ```
 
 or
 
 ```
+flutter pub get
 flutter run
 ```
