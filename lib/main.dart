@@ -5,6 +5,7 @@ import 'maintainer/members.dart';
 import 'background/background.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:easy_web_view/easy_web_view.dart';
+import 'pages/neteaseMusic.dart';
 
 void main() => runApp(HomePage());
 
@@ -75,7 +76,9 @@ class _HomePageState extends State<HomePage> {
                   body: IJoinUs(),
                 ),
                 Scaffold(body: IUsefulBooksIFrame()),
-                Scaffold()
+                Scaffold(
+                  body: INeteasePage(),
+                )
               ],
             ),
             drawer: Drawer(
